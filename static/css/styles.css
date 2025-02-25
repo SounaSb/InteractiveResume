@@ -1,0 +1,522 @@
+/* ############################# */
+/* Main page styles */
+/* ############################# */
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+
+.resume {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+.section {
+    margin-bottom: 25px;
+}
+
+.chat-button {
+    text-align: center;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 30px;
+    background: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.btn:hover {
+    background: #0056b3;
+    transform: translateY(-3px);
+    transition: transform 0.3s ease-in-out;
+}
+
+.btn:not(:hover) {
+    transform: translateY(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+.pdf-container {
+    position: relative;
+}
+
+.download-icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    color: #666;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.download-icon:hover {
+    color: #333;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+
+
+
+/* ############################# */
+/* Chatbot styles */
+/* ############################# */
+
+.chat-container {
+    max-width: 100%;  /* Changed from 1100px to 100% */
+    width: 100%;      /* Added to ensure full width */
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    background: #f7f7f8;
+    position: relative;
+    background: linear-gradient(
+        to right,
+        white,
+        #f7f7f8 10%,
+        #f7f7f8 90%,
+        white
+    );
+}
+
+.chat-header {
+    padding: 25px 20px; /* Increased from 20px 20px */
+    height: 60px; /* Added explicit height */
+    border-bottom: 1px solid #e5e5e5;
+    background: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1001;  /* Increased z-index to stay above the fade */
+    box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding-right: 80px; /* Add more space for clear button */
+}
+
+.chat-header h1 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    font-size: 1.5em;
+    text-align: center;
+    width: auto;
+}
+
+.back-button {
+    color: #666;
+    text-decoration: none;
+    font-size: 1em;
+    padding: 8px 15px;
+    background: #f8f9fa;
+    color: #6c757d;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: all 0.4s ease;
+    opacity: 0.7;
+    text-decoration: none;
+}
+
+.back-button:hover {
+    background: #e9ecef;
+    color: #495057;
+    border-color: #495057;
+    opacity: 1;
+    transform: none;
+}
+
+.clear-chat {
+    position: absolute;
+    right: 35px; /* Increased from 30px */
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 8px 15px;
+    background: #f8f9fa;
+    color: #6c757d;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: all 0.4s ease;
+    opacity: 0.7;
+}
+
+.clear-chat:hover {
+    background: #e9ecef;
+    color: #dc3545;
+    border-color: #dc3545;
+    opacity: 1;
+}
+
+
+
+/* ###########################
+####   Chatbot messages     ##
+############################# */
+
+
+.messages-container {
+    flex-grow: 1;
+    overflow-y: auto;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    margin: 0;
+    padding: 160px 15% 190px 10%; /* top right bottom left */
+    background: linear-gradient(to bottom, #f7f7f8 0%, transparent 15%);
+}
+
+/* Add separate fade element */
+.messages-container::before {
+    content: '';
+    position: fixed;
+    top: 90px;  /* Position right below header */
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: linear-gradient(to bottom, #f7f7f8, transparent);
+    pointer-events: none;
+    z-index: 1000;
+}
+
+/* Ensure input form doesn't overlap with messages */
+.chat-form {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 40px 20px;
+    background: linear-gradient(to top, #f7f7f8 70%, transparent 100%);
+    z-index: 1000;
+}
+
+/* Adjust message spacing */
+.message {
+    margin-bottom: 35px;
+    display: flex;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: messageAppear 0.3s ease forwards;
+}
+
+.message.user {
+    justify-content: flex-end;
+    padding-left: 35%;  /* Pull user messages more towards center */
+}
+
+.message.bot {
+    justify-content: flex-start;
+    padding-right: 2%;  /* Limit how far bot messages stretch */
+}
+
+@keyframes messageAppear {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.message-content {
+    max-width: 80%;
+    padding: 12px 16px;
+    border-radius: 15px; /* Increased from 8px */
+    background: white;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.message.user .message-content {
+    background: #9a9a9a; /* Lighter grey (previously #808080) */
+    color: white;
+    font-size: 1em;
+    max-width: 800px; /* Set absolute max-width */
+    margin-right: 5%;
+}
+
+.message.bot .message-content {
+    background: white;           /* Bring back white background */
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);  /* Bring back shadow */
+    padding: 16px 24px;         /* Reduced vertical padding */
+    color: #555;             /* Lighter text color */
+    max-width: 800px;  /* Set absolute max-width */
+    margin-right: 0;  /* Remove right margin */
+    font-size: 1em;          /* Reduced from 1.1em */
+    border-radius: 16px;
+    line-height: 1.6;        /* Adjusted line height */
+}
+
+.message.bot br {
+    display: block;
+    margin: 8px 0;  /* Adjusted spacing between paragraphs */
+}
+
+.message.bot .message-content strong {
+    font-weight: 600;
+    color: #222;              /* Slightly lighter than pure black */
+}
+
+.message.bot .message-content br {
+    display: block;
+    margin: 10px 0;
+    content: "";
+}
+
+.chat-form {
+    padding: 20px;
+    background: transparent;
+    position: fixed;
+    bottom: 40px;          /* Move input box up more */
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding-top: 20px;     /* Reduced top padding */
+    background: transparent;  /* Remove fade effect from bottom */
+}
+
+.chat-form:focus-within {
+    transform: none;
+}
+
+.input-container {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 10px;
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    padding: 15px 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    border: 1px solid rgba(0,0,0,0.05);
+    position: relative;
+    backdrop-filter: blur(10px);
+    transform: translateY(0);
+    transition: all 0.3s ease;
+}
+
+.input-container:focus-within {
+    box-shadow: 0 6px 24px rgba(0,0,0,0.12);
+    transform: translateY(-2px);
+}
+
+.input-container input {
+    flex-grow: 1;
+    padding: 12px 16px;
+    border: none;
+    background: transparent;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.input-container input:focus {
+    outline: none;
+}
+
+.input-container button {
+    padding: 12px 20px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 50px;
+}
+
+.input-container button:hover {
+    background: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.input-container button:active {
+    transform: translateY(0);
+}
+
+.typing-indicator {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: #555;             /* Match bot message color */
+    font-size: 1em;
+    font-family: inherit;
+    background: transparent;
+    line-height: 1.6;        /* Match bot message line height */
+}
+
+.message-content .typing-indicator {
+    margin: 0;
+    padding: 0;
+}
+
+.typing-dots {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 2px; /* Reduced from 3px */
+    margin-left: 2px; /* Reduced from 4px */
+    position: relative;
+    top: 4px; /* Move dots down a bit */
+}
+
+.typing-dots span {
+    display: inline-block;
+    width: 2px;  /* Make dots slightly smaller */
+    height: 2px;  /* Make dots slightly smaller */
+    border-radius: 50%;
+    background: #333;
+    margin: 0;
+    opacity: 0;
+    animation: typingDot 2s infinite;
+    position: relative;
+    top: 2px; /* Fine-tune vertical position */
+}
+
+.typing-dots span:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.typing-dots span:nth-child(2) { 
+    animation-delay: 0.3s;
+}
+
+.typing-dots span:nth-child(3) { 
+    animation-delay: 0.6s;
+}
+
+@keyframes typingDot {
+    0% { opacity: 0; }
+    20% { opacity: 1; }
+    60% { opacity: 1; }
+    80%, 100% { opacity: 0; }
+}
+
+#typing-indicator {
+    opacity: 0;
+    transform: translateY(10px);
+    animation: messageAppear 0.3s ease forwards;
+    animation-delay: 0.2s; /* Small delay after user message */
+}
+
+#typing-indicator .message-content {
+    background: white;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    padding: 16px 24px;
+    color: #555;
+    border-radius: 16px;
+}
+
+
+
+/* error message */
+.error-message {
+    color: #dc3545;
+    font-size: 0.9em;
+    margin-top: 10px;
+    display: none;
+}
+
+
+
+
+/* ############################# */
+/* Responsive styles */
+/* ############################# */
+
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    .resume {
+        padding: 20px;
+    }
+
+    .chat-header {
+        padding: 15px 10px;
+    }
+
+    .chat-header h1 {
+        font-size: 1.2em;
+    }
+
+    .back-button {
+        padding: 5px 10px;
+        font-size: 0.8em;
+    }
+
+    .clear-chat {
+        padding: 5px 10px;
+        font-size: 0.8em;
+    }
+
+    .messages-container {
+        padding: 120px 10% 140px 5%;
+    }
+
+    .message-content {
+        padding: 10px 14px;
+    }
+
+    .input-container {
+        padding: 10px 14px;
+    }
+
+    .input-container input {
+        padding: 10px 14px;
+    }
+
+    .input-container button {
+        padding: 10px 16px;
+    }
+
+    .typing-indicator {
+        font-size: 0.9em;
+    }
+
+    .typing-dots {
+        top: 2px;
+    }
+
+    .typing-dots span {
+        width: 1px;
+        height: 1px;
+        top: 1px;
+    }
+}

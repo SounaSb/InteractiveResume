@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chat with my Resume</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            <a href="/" class="back-button"><i class="fas fa-arrow-left"></i> Back to Resume</a>
+            <h1>Chat with my Resume</h1>
+        </div>
+
+        <div class="messages-container" id="messages">
+            <div class="message bot">
+                <div class="message-content">
+                    Hey! I'm Daniel's resume bot. Ask me anything about his experience, skills, or background!
+                </div>
+            </div>
+        </div>
+
+        <form class="chat-form" id="chat-form">
+            <div class="input-container">
+                <input type="text" id="user-input" placeholder="e.g. 'Tell me more about Daniel's experience at EDF Singapore...'" required>
+                <button type="submit">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function formatMessage(text) {
+            // Convert **text** to bold (improved regex)
+            text = text.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+            
+            // Convert newlines to <br>
+            text = text.replace(/\n\n/g, '<br><br>');
+            
+            // Convert bullet points
+            text = text.replace(/•/g, '\n&bull;');
+            
+            return text;
+        }
+
+        // Load messages from localStorage when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedMessages = JSON.parse(localStorage.getItem('chatMessages') || '[]');
+            savedMessages.forEach(msg => {
+                addMessage(msg.text, msg.sender, false);
+            });
+        });
+
+        document.getElementById('chat-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const input = document.getElementById('user-input');
+            const message = input.value;
+            
+            addMessage(message, 'user', true);
+            input.value = '';
+            showTypingIndicator();
+            
+            try {
+                const response = await fetch('/api/chat/', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ 
+                        message: message,
+                        history: JSON.parse(localStorage.getItem('chatMessages') || '[]')
+                    })
+                });
+
+                const reader = response.body.getReader();
+                const decoder = new TextDecoder();
+                let partialResponse = '';
+
+                while (true) {
+                    const { done, value } = await reader.read();
+                    if (done) break;
+                    
+                    const chunk = decoder.decode(value);
+                    partialResponse += chunk;
+                    updateLastMessage(partialResponse, 'bot');
+                }
+
+                hideTypingIndicator();
+                if (partialResponse.trim()) {
+                    addMessage(partialResponse.trim(), 'bot', true);
+                } else {
+                    addMessage("Sorry, I couldn't generate a response.", 'bot', true);
+                }
+
+            } catch (error) {
+                console.error('Error:', error);
+                hideTypingIndicator();
+                addMessage("Sorry, I encountered an error. Please try again.", 'bot', true, 'error-message');
+            }
+        });
+
+        function addMessage(text, sender, save = true, extraClass = '') {
+            const messages = document.getElementById('messages');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${sender}`;
+            
+            // Apply formatting only to bot messages
+            const formattedText = sender === 'bot' ? formatMessage(text) : text;
+            
+            const contentClass = extraClass ? `message-content ${extraClass}` : 'message-content';
+            messageDiv.innerHTML = `<div class="${contentClass}">${formattedText}</div>`;
+            
+            messages.appendChild(messageDiv);
+            messages.scrollTop = messages.scrollHeight;
+
+            if (save) {
+                const savedMessages = JSON.parse(localStorage.getItem('chatMessages') || '[]');
+                savedMessages.push({ text, sender, extraClass });
+                localStorage.setItem('chatMessages', JSON.stringify(savedMessages));
+            }
+        }
+
+        function showTypingIndicator() {
+            const messages = document.getElementById('messages');
+            const typingDiv = document.createElement('div');
+            typingDiv.className = 'message bot';
+            typingDiv.id = 'typing-indicator';
+            typingDiv.innerHTML = `
+                <div class="message-content bot-style">
+                    <div class="typing-indicator">
+                        Daniel's Resume is typing<span class="typing-dots"><span></span><span></span><span></span></span>
+                    </div>
+                </div>
+            `;
+            messages.appendChild(typingDiv);
+            messages.scrollTop = messages.scrollHeight;
+        }
+
+        function hideTypingIndicator() {
+            const typingDiv = document.getElementById('typing-indicator');
+            if (typingDiv) {
+                typingDiv.remove();
+            }
+        }
+
+        function updateLastMessage(text, sender) {
+            const messages = document.getElementById('messages');
+            const lastMessage = messages.lastElementChild;
+            if (lastMessage && lastMessage.classList.contains(sender)) {
+                const messageContent = lastMessage.querySelector('.message-content');
+                messageContent.innerHTML = formatMessage(text);
+            }
+        }
+
+        // Optional: Add a clear button
+        const headerDiv = document.querySelector('.chat-header');
+        const clearButton = document.createElement('button');
+        clearButton.className = 'clear-chat';
+        clearButton.innerHTML = '<i class="fas fa-trash"></i> Clear Chat';
+        headerDiv.appendChild(clearButton);
+
+        clearButton.addEventListener('click', function() {
+            if (confirm('Are you sure you want to clear the chat history?')) {
+                localStorage.removeItem('chatMessages');
+                document.getElementById('messages').innerHTML = `
+                    <div class="message bot">
+                        <div class="message-content">
+                            Hey! I'm Daniel's resume bot. Ask me anything about his experience, skills, or background!
+                        </div>
+                    </div>
+                `;
+            }
+        });
+    </script>
+</body>
+</html>

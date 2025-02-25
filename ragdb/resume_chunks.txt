@@ -1,0 +1,87 @@
+
+### Current Education - Princeton University Overview
+Currently studying at Princeton University, in the MFin (Master in Finance program, STEM degree). Started in Aug 2024, will be graduating in May 2025.
+Applying the strong quantitative and mathematical background developped at Ecole Polytechnique to quant finance, with a dual approach between Operational Research and Finance departments.
+
+### Current Education - Princeton University Courses
+Current Relevant courses attended: Statistical Analysis of Financial Data, Computational Finance in C++, Financial Risk Management, Stochastic Calculus and Asset Pricing, Financial Econometrics, Large Language Models, Time Series Analysis
+
+### Current Education - Princeton University Instructor role
+Current Assistant Instructor position with professor Yacine Aït-Sahalia for Fixed Income, Options and derivatives: Models and application.
+
+### Current Education - Princeton University Visa Status
+Under F1 student's visa for studying in the US. 
+Will get OPT working visa as I graduate with a stem degree for two years. 
+Will require sponsorship afterwards.
+
+
+
+
+### Previous Education - Ecole Polytechnique Overview
+Graduated from Ecole Polytechnique - 'Grandes Ecoles' program. 
+Specialized in Applied Mathematics. GPA: 3.9/4.0. 
+Period: From Aug 2021 to May 2024. Engineering degree (M2).
+Note: France's most prestigious Engineering curriculum.
+
+### Previous Education - Ecole Polytechnique Courses
+Program focus: Research oriented, proof based courses and curriculum.
+Relevant courses attended: Statistics, NLP, Machine learning in C++, Introduction to Java, Deep learning theory, Stochastics in finance, Advanced Monte Carlo Theory, Advanced quantum physics, Stochstic simulations for biology, Time series analysis, Optimization and Control
+
+### Previous Education - Ecole Polytechnique Entrance Context
+At prestigious selective institution CPGE Ginette.
+Ranked 69 out of 20,000 students on France national Unversity entrance exams in double major Physics and Math, and minor chemistry.
+Tested courses and topics include: Linear Algebra, Real analysis, probabilities, multivariate analysis, derivatives, fluid mechanics, point mechanics, optic therory, 
+electric theory, thermodynamics, electromagnetism, cinectic chemistry, organic chemistry.
+
+
+
+
+### Internship Experience - EDF Singapore
+Research internship at EDF Lab Pacific Asia in Singapore as a Quantitative Researcher Intern.
+From Mar - Aug 2024, during third year at Ecole Polytechnique.
+• Created and priced a market of contracts covering a regulation induced renewable energy demand with an optimal allocation.
+• Developed a deep learning algorithm to solve non-linear stochastic optimization problems with storage control for commodity trading strategies.
+Awarded best research project in financial mathematics award by Fondation de l'Ecole Polytechnique and official Congratulations prize from the University.
+
+
+### Internship Experience - Bain & Company
+Summer Internship at Bain & Company Paris office, as Associate Consultant Intern.
+From Jun - Aug 2022 (between my second and third year at Ecole Polytechnique)
+• Priced products for a Mobility Payment company under LBO by conducting analyses of US market
+• Identified 35% additional sales revenue potential on the US market across 4 strategic levers
+- Recieved return offer (declined for career direction change)
+
+
+
+
+### Academic contests
+- Speech and Debate competitions in high school, quarter finalist in French High schools National Debate and Eloquence Cup.
+- Selected to represent high school Saint-Louis de Gonzague at history national contest in 2019.
+
+### Military and Leadership Experience
+- Officer cadet in French military (Ecole Polytechnique curriculum). 
+- Selected for protection missions for Bank of France money convoys and French President E.Macron.
+- Selected as part of French military parade cohort representing Ecole Polytechnique on national day (14th of July 2021).
+
+### Community Engagement
+- Volunteering academic tutor for underpriviledged students.
+- Focus on national exam preparation and academic success.
+- Subjects taught: physics, maths, history and French.
+
+
+
+
+### Technical Skills
+Programming: Python (Pandas, Scikit-learn, TensorFlow, PyTorch)
+Data Science: Networkx, Pyomo, HuggingFace, LangChain
+Web Development: Django, HTML, CSS
+Additional: Java, C++
+
+### Language Proficiency
+Fluent: English, French, Arabic 
+Conversational: Mandarin Chinese,Spani sh, German
+
+### Personal Interests
+Professional: LLMs, AI
+Sports: Skydiving, Swimming
+Academic: Speech contests, Debate
