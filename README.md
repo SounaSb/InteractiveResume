@@ -1,8 +1,11 @@
 # Interactive AI Resume Chat
 
 This application implements an interactive AI chatbot that can answer questions about my resume in real-time. Built using a Retrieval-Augmented Generation (RAG) architecture, it provides a virtual interview experience with detailed information about my background, skills, and projects.
-
-<href="http://danielsbeiticv.com" />Try it out yourself ! 
+<div align="center">
+  
+  [🚀 Try it out yourself!](http://danielsbeiticv.com)
+  
+</div>
 
 ## Home Interface
 <img width="1702" alt="Screenshot 2025-03-04 at 23 39 42" src="https://github.com/user-attachments/assets/ef9a85d5-f2d0-4f7a-9f4d-81bd1b8382b9" />
