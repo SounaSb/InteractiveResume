@@ -78,7 +78,7 @@ class RagRetriever:
         scores, indices = self.index.search(np.array(query_vector).astype('float32'), k)
 
 
-        threshold = 0.25  # Adjust based on your needs
+        threshold = 0.25
         selected_chunks = []
 
         for score, idx in zip(scores[0], indices[0]):

@@ -139,3 +139,5 @@ GitHub.sublime-settings
 dsaws.pem
 
 .DS_Store
+setup_env.sh
+
