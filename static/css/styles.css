@@ -2,6 +2,14 @@
 /* Main page styles */
 /* ############################# */
 
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
 .container {
     max-width: 1000px;
     margin: 0 auto;
@@ -9,17 +17,18 @@
 }
 
 h1 {
-    color: #333;
+    color: #b8b8b8; /* Softer color for the title */
     text-align: center;
     margin-bottom: 50px;
+    font-weight: 400; /* Lighter font weight */
+    text-shadow: 0 1px 2px rgba(0,0,0,0.2); /* Subtle shadow for depth */
 }
 
-
 .resume {
-    background: #fff;
+    background: #1e1e1e;
     padding: 30px;
     border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
     margin-bottom: 30px;
     margin-top: 30px;
 }
@@ -35,25 +44,25 @@ h1 {
 .btn {
     display: inline-block;
     padding: 15px 30px;
-    background: #007bff;
+    background: #2979ff;
     color: white;
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
-    transition: background 0.3s;
+    transition: background 0.2s;
     margin-bottom: 15px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
 }
 
 .btn:hover {
-    background: #0056b3;
+    background: #1c54b2;
     transform: translateY(-3px);
     transition: transform 0.3s ease-in-out;
 }
 
 .btn:not(:hover) {
     transform: translateY(0);
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.2s ease-in-out;
 }
 
 .pdf-container {
@@ -65,8 +74,8 @@ h1 {
     top: 20px;
     right: 20px;
     z-index: 1000;
-    color: #666;
-    background: rgba(255, 255, 255, 0.8);
+    color: #e0e0e0;
+    background: rgba(50, 50, 50, 0.8);
     padding: 10px;
     border-radius: 50%;
     width: 20px;
@@ -75,55 +84,52 @@ h1 {
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
 }
 
 .download-icon:hover {
-    color: #333;
+    color: #ffffff;
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.4);
 }
-
-
-
 
 /* ############################# */
 /* Chatbot styles */
 /* ############################# */
 
 .chat-container {
-    max-width: 100%;  /* Changed from 1100px to 100% */
-    width: 100%;      /* Added to ensure full width */
+    max-width: 100%;
+    width: 100%;
     height: 100vh;
     display: flex;
     flex-direction: column;
     margin: 0 auto;
-    background: #f7f7f8;
+    background: #121212;
     position: relative;
     background: linear-gradient(
         to right,
-        white,
-        #f7f7f8 10%,
-        #f7f7f8 90%,
-        white
+        #121212,
+        #1a1a1a 10%,
+        #1a1a1a 90%,
+        #121212
     );
 }
 
 .chat-header {
-    padding: 25px 20px; /* Increased from 20px 20px */
-    height: 60px; /* Added explicit height */
-    border-bottom: 1px solid #e5e5e5;
-    background: white;
+    padding: 25px 20px;
+    height: 60px;
+    border-bottom: 1px solid #333;
+    background: #1e1e1e;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1001;  /* Increased z-index to stay above the fade */
-    box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+    z-index: 1001;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1); /* Reduced shadow intensity */
     display: flex;
     align-items: center;
     gap: 15px;
-    padding-right: 80px; /* Add more space for clear button */
+    padding-right: 80px;
 }
 
 .chat-header h1 {
@@ -134,61 +140,58 @@ h1 {
     font-size: 1.5em;
     text-align: center;
     width: auto;
+    color: #b8b8b8; /* Match the softer title color */
 }
 
 .back-button {
-    color: #666;
+    color: #e0e0e0;
     text-decoration: none;
     font-size: 1em;
     padding: 8px 15px;
-    background: #f8f9fa;
-    color: #6c757d;
-    border: 1px solid #dee2e6;
+    background: #444;  /* Lighter background color */
+    border: 1px solid #555;  /* Lighter border color */
     border-radius: 5px;
     cursor: pointer;
     font-size: 0.9em;
     transition: all 0.4s ease;
-    opacity: 0.7;
+    opacity: 0.85;  /* Increased opacity */
     text-decoration: none;
 }
 
 .back-button:hover {
-    background: #e9ecef;
-    color: #495057;
-    border-color: #495057;
+    background: #555;  /* Lighter hover color */
+    color: #fff;
+    border-color: #666;
     opacity: 1;
     transform: none;
 }
 
 .clear-chat {
     position: absolute;
-    right: 35px; /* Increased from 30px */
+    right: 35px;
     top: 50%;
     transform: translateY(-50%);
     padding: 8px 15px;
-    background: #f8f9fa;
-    color: #6c757d;
-    border: 1px solid #dee2e6;
+    background: #444;  /* Lighter background color */
+    color: #e0e0e0;  /* Lighter text color */
+    border: 1px solid #555;  /* Lighter border color */
     border-radius: 5px;
     cursor: pointer;
     font-size: 0.9em;
     transition: all 0.4s ease;
-    opacity: 0.7;
+    opacity: 0.85;  /* Increased opacity */
 }
 
 .clear-chat:hover {
-    background: #e9ecef;
-    color: #dc3545;
-    border-color: #dc3545;
+    background: #555;  /* Lighter hover color */
+    color: #ff8585;  /* Lighter red color for better visibility */
+    border-color: #ff8585;
     opacity: 1;
 }
-
-
 
 /* ###########################
 ####   Chatbot messages     ##
 ############################# */
-
 
 .messages-container {
     flex-grow: 1;
@@ -197,51 +200,49 @@ h1 {
     box-sizing: border-box;
     position: relative;
     margin: 0;
-    padding: 160px 15% 190px 10%; /* top right bottom left */
-    background: linear-gradient(to bottom, #f7f7f8 0%, transparent 15%);
+    padding: 160px 15% 190px 10%;
+    background: linear-gradient(to bottom, #121212 0%, transparent 15%);
 }
 
-/* Add separate fade element */
 .messages-container::before {
     content: '';
     position: fixed;
-    top: 90px;  /* Position right below header */
+    top: 90px;
     left: 0;
     right: 0;
     height: 100px;
-    background: linear-gradient(to bottom, #f7f7f8, transparent);
+    background: linear-gradient(to bottom, #121212, transparent);
     pointer-events: none;
     z-index: 1000;
 }
 
-/* Ensure input form doesn't overlap with messages */
 .chat-form {
     position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
     padding: 40px 20px;
-    background: linear-gradient(to top, #f7f7f8 70%, transparent 100%);
+    background: linear-gradient(to top, #121212 70%, transparent 100%);
     z-index: 1000;
 }
 
-/* Adjust message spacing */
 .message {
     margin-bottom: 35px;
     display: flex;
     opacity: 0;
     transform: translateY(10px);
     animation: messageAppear 0.3s ease forwards;
+    position: relative;
 }
 
 .message.user {
     justify-content: flex-end;
-    padding-left: 35%;  /* Pull user messages more towards center */
+    padding-left: 35%;
 }
 
 .message.bot {
     justify-content: flex-start;
-    padding-right: 2%;  /* Limit how far bot messages stretch */
+    padding-right: 2%;
 }
 
 @keyframes messageAppear {
@@ -253,40 +254,72 @@ h1 {
 
 .message-content {
     max-width: 80%;
-    padding: 12px 16px;
-    border-radius: 15px; /* Increased from 8px */
-    background: white;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    padding: 14px 18px;
+    border-radius: 18px;
+    background: #1e1e1e;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+    position: relative;
+}
+
+.message.user .message-content:after {
+    content: '';
+    position: absolute;
+    bottom: 10px;
+    right: -10px;
+    width: 20px;
+    height: 16px;
+    background: #2979ff;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+}
+
+.message.bot .message-content:after {
+    content: '';
+    position: absolute;
+    bottom: 10px;
+    left: -10px;
+    width: 20px;
+    height: 16px;
+    background: #f0f0f0; /* Updated to match new bot bubble color */
+    border-bottom-right-radius: 16px;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    clip-path: polygon(0 0, 100% 0, 100% 100%);
 }
 
 .message.user .message-content {
-    background: #9a9a9a; /* Lighter grey (previously #808080) */
+    background: #2979ff;
     color: white;
     font-size: 1em;
-    max-width: 800px; /* Set absolute max-width */
-    margin-right: 5%;
+    max-width: 800px;
+    margin-right: 8%;
+    padding: 14px 20px;
 }
 
 .message.bot .message-content {
-    background: white;           /* Bring back white background */
-    box-shadow: 0 1px 2px rgba(0,0,0,0.1);  /* Bring back shadow */
-    padding: 16px 24px;         /* Reduced vertical padding */
-    color: #555;             /* Lighter text color */
-    max-width: 800px;  /* Set absolute max-width */
-    margin-right: 0;  /* Remove right margin */
-    font-size: 1em;          /* Reduced from 1.1em */
-    border-radius: 16px;
-    line-height: 1.6;        /* Adjusted line height */
+    background: #f0f0f0; /* Much lighter background for bot messages */
+    box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+    padding: 16px 24px;
+    color: #222222; /* Dark text for better contrast */
+    max-width: 800px;
+    margin-left: 8px;
+    font-size: 1em;
+    border-radius: 18px;
+    line-height: 1.6;
 }
 
 .message.bot br {
     display: block;
-    margin: 8px 0;  /* Adjusted spacing between paragraphs */
+    margin: 8px 0;
 }
 
 .message.bot .message-content strong {
     font-weight: 600;
-    color: #222;              /* Slightly lighter than pure black */
+    color: #000000; /* Darker text for strong elements */
 }
 
 .message.bot .message-content br {
@@ -317,11 +350,11 @@ h1 {
     margin-bottom: 10px;
     max-width: 800px;
     margin: 0 auto;
-    background: white;
+    background: #1e1e1e;
     padding: 15px 20px;
     border-radius: 20px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    border: 1px solid rgba(0,0,0,0.05);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    border: 1px solid rgba(255,255,255,0.05);
     position: relative;
     backdrop-filter: blur(10px);
     transform: translateY(0);
@@ -329,8 +362,9 @@ h1 {
 }
 
 .input-container:focus-within {
-    box-shadow: 0 6px 24px rgba(0,0,0,0.12);
+    box-shadow: 0 6px 24px rgba(0,0,0,0.3);
     transform: translateY(-2px);
+    border: 1px solid rgba(255,255,255,0.1);
 }
 
 .input-container input {
@@ -340,6 +374,11 @@ h1 {
     background: transparent;
     border-radius: 5px;
     font-size: 1em;
+    color: #e0e0e0;
+}
+
+.input-container input::placeholder {
+    color: #888;
 }
 
 .input-container input:focus {
@@ -348,7 +387,7 @@ h1 {
 
 .input-container button {
     padding: 12px 20px;
-    background: #007bff;
+    background: #2979ff;
     color: white;
     border: none;
     border-radius: 15px;
@@ -361,9 +400,9 @@ h1 {
 }
 
 .input-container button:hover {
-    background: #0056b3;
+    background: #1c54b2;
     transform: translateY(-2px);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
 }
 
 .input-container button:active {
@@ -374,11 +413,11 @@ h1 {
     display: flex;
     align-items: center;
     gap: 4px;
-    color: #555;             /* Match bot message color */
+    color: #222222; /* Update typing indicator text to match new bot text color */
     font-size: 1em;
     font-family: inherit;
     background: transparent;
-    line-height: 1.6;        /* Match bot message line height */
+    line-height: 1.6;
 }
 
 .message-content .typing-indicator {
@@ -400,7 +439,7 @@ h1 {
     width: 2px;  /* Make dots slightly smaller */
     height: 2px;  /* Make dots slightly smaller */
     border-radius: 50%;
-    background: #333;
+    background: #555; /* Darker dots for better visibility against light background */
     margin: 0;
     opacity: 0;
     animation: typingDot 2s infinite;
@@ -435,25 +474,20 @@ h1 {
 }
 
 #typing-indicator .message-content {
-    background: white;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    background: #f0f0f0; /* Match the new bot bubble color */
+    box-shadow: 0 1px 2px rgba(0,0,0,0.15);
     padding: 16px 24px;
-    color: #555;
+    color: #222222; /* Match the new text color */
     border-radius: 16px;
 }
 
-
-
 /* error message */
 .error-message {
-    color: #dc3545;
+    color: #ff6b6b;
     font-size: 0.9em;
     margin-top: 10px;
     display: none;
 }
-
-
-
 
 /* ############################# */
 /* Responsive styles */
@@ -491,7 +525,22 @@ h1 {
     }
 
     .message-content {
-        padding: 10px 14px;
+        padding: 12px 16px; /* Adjusted padding for mobile */
+    }
+
+    .message.user .message-content:after,
+    .message.bot .message-content:after {
+        bottom: 8px; /* Adjust tail position for mobile */
+        width: 16px;
+        height: 12px;
+    }
+
+    .message.user .message-content {
+        margin-right: 6%; /* Adjusted for mobile */
+    }
+
+    .message.bot .message-content {
+        margin-left: 6px; /* Adjusted for mobile */
     }
 
     .input-container {

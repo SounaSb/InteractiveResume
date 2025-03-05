@@ -4,14 +4,27 @@
     <title>Talk with my Resume</title>
     <link rel="stylesheet" href="/static/css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Additional style for the home page title */
+        .container h1 {
+            color: #b8b8b8;
+            font-size: 1.8em;
+            line-height: 1.4;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: normal;
+            padding: 15px;
+        }
+    </style>
 </head>
 <body>
 
     <div class="container">
-        <h1>Interested in my profile ? You can talk with my resume here.</h1>
+        <h1>Interested in my profile ? You can chat with me resume for more information.</h1>
         
         <div class="chat-button">
-            <a href="/chat/" class="btn">Chat with my Resume</a>
+            <a href="/chat/" class="btn" data-clear-history="true">Chat with my Resume</a>
         </div>
 
 
@@ -34,5 +47,12 @@
 
 
     </div>
+
+    <script>
+        // Add click handler to clear chat history when clicking the chat button
+        document.querySelector('.chat-button a').addEventListener('click', function(e) {
+            localStorage.removeItem('chatMessages');
+        });
+    </script>
 </body>
 </html>

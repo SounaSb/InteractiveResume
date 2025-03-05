@@ -130,7 +130,7 @@ def get_streaming_response_api(message: str, history: List[Dict[str, str]], api_
         response = client.chat.completions.create(
             model=model,
             messages=messages,
-            temperature=0.5,
+            temperature=0.8,
             max_tokens=300,
             stream=True
         )

@@ -15,7 +15,7 @@
         <div class="messages-container" id="messages">
             <div class="message bot">
                 <div class="message-content">
-                    Hey! I'm Daniel's resume bot. Ask me anything about his experience, skills, or background!
+                    👋 Hey! I'm Daniel's resume bot. Ask me anything about his experience, skills, or background!
                 </div>
             </div>
         </div>
@@ -44,8 +44,19 @@
             return text;
         }
 
-        // Load messages from localStorage when page loads
+        // Check if we need to clear chat history based on referrer
         document.addEventListener('DOMContentLoaded', function() {
+            // Check if we're coming from the home page with the clear history parameter
+            const referrer = document.referrer;
+            const isComingFromHome = referrer && referrer.includes(window.location.origin + '/');
+            
+            if (isComingFromHome) {
+                // We're coming from home page, so we don't need to reload messages
+                // The chat history was already cleared by the click handler on the home page
+                return;
+            }
+
+            // Load messages from localStorage when page loads (only if not coming from home)
             const savedMessages = JSON.parse(localStorage.getItem('chatMessages') || '[]');
             savedMessages.forEach(msg => {
                 addMessage(msg.text, msg.sender, false);
@@ -166,7 +177,7 @@
                 document.getElementById('messages').innerHTML = `
                     <div class="message bot">
                         <div class="message-content">
-                            Hey! I'm Daniel's resume bot. Ask me anything about his experience, skills, or background!
+                            👋 Hey! I'm Daniel's resume bot. Ask me anything about his experience, skills, or background!
                         </div>
                     </div>
                 `;
