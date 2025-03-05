@@ -1,0 +1,22 @@
+# Core web framework
+Django>=4.2.5
+
+# API libraries
+openai>=1.2.0
+requests>=2.28.0
+
+# Environment variable management
+python-dotenv>=1.0.0
+
+# RAG components
+faiss-cpu>=1.7.4
+sentence-transformers>=2.2.2
+numpy>=1.22.0
+
+# File handling & utilities
+pathlib>=1.0.1
+pickle5>=0.0.12
+
+# Production deployment
+gunicorn>=21.2.0
+whitenoise>=6.4.0
