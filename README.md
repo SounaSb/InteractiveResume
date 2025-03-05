@@ -3,7 +3,7 @@
 
 <div align="center">
   
-🚀 [Try it out yourself!](http://danielsbeiticv.com){:target="_blank"}
+🚀 <a href="http://danielsbeiticv.com" target="_blank">Try it out yourself!</a>
   
 </div>
 
