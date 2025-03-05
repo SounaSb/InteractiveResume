@@ -35,11 +35,17 @@
             // Convert **text** to bold (improved regex)
             text = text.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
             
+            // Handle bullet points with various markers (•, -, *)
+            text = text.replace(/\n\s*[-•*]\s+([^\n]+)/g, '\n<br>• $1');
+            
+            // Handle bullet points that are at the beginning of text
+            text = text.replace(/^\s*[-•*]\s+([^\n]+)/g, '• $1');
+            
             // Convert newlines to <br>
             text = text.replace(/\n\n/g, '<br><br>');
             
-            // Convert bullet points
-            text = text.replace(/•/g, '\n&bull;');
+            // Handle numbered lists
+            text = text.replace(/\n\s*(\d+)[\.\)]\s+([^\n]+)/g, '\n<br>$1. $2');
             
             return text;
         }

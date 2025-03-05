@@ -36,12 +36,28 @@ electric theory, thermodynamics, electromagnetism, cinectic chemistry, organic c
 
 
 
-### Internship Experience - EDF Singapore
+
+### Internship Experience - EDF Singapore - Overview
 Research internship at EDF Lab Pacific Asia in Singapore as a Quantitative Researcher Intern.
-From Mar - Aug 2024, during third year at Ecole Polytechnique.
+From Mar - Aug 2024, during third year at Ecole Polytechnique with Pr. Nizar Touzi
 • Created and priced a market of contracts covering a regulation induced renewable energy demand with an optimal allocation.
 • Developed a deep learning algorithm to solve non-linear stochastic optimization problems with storage control for commodity trading strategies.
 Awarded best research project in financial mathematics award by Fondation de l'Ecole Polytechnique and official Congratulations prize from the University.
+
+### Internship experience - EDF Singapore - Market Context & Problem Statement:
+The growing demand for hourly-matched renewable energy contracts from corporations (e.g., Google, Microsoft) created the need for a structured market pricing mechanism. 
+My work focused on optimizing investment costs in renewable energy production and storage assets to meet contracted green energy demand.
+
+### Internship experience - EDF Singapore - Mathematical Modeling & Optimization:
+Developed a stochastic control model integrating renewable energy generation, electricity demand, and battery storage.
+Designed a cost-minimization framework constrained by regulatory green energy targets, ensuring optimal asset allocation.
+Applied Lagrangian relaxation methods to convert the constrained problem into an unconstrained optimization for computational feasibility.
+
+### Internship experience - EDF Singapore - Numerical Approach & Computational Efficiency:
+Implemented a deep learning-based optimization algorithm leveraging stochastic gradient descent and neural networks with Xavier Warin
+Trained time-dependent control models for battery storage management across different energy production and consumption scenarios.
+Optimized computational efficiency, reducing training time from several days to approximately 2 hours through batch processing and adaptive learning rate decay.
+
 
 
 ### Internship Experience - Bain & Company
@@ -52,6 +68,45 @@ From Jun - Aug 2022 (between my second and third year at Ecole Polytechnique)
 - Recieved return offer (declined for career direction change)
 
 
+
+
+### Research and Interests
+With a deeply research-oriented mindset, I am passionate about exploring advanced topics in Artificial Intelligence, Machine Learning, and Applied Mathematics. My academic and professional experiences have strengthened my ability to tackle complex problems using mathematical modeling, deep learning, and optimization.
+I have a particular interest in:
+Generative AI: Understanding tokenization, model architectures, latent space representations (e.g., VAEs), and RAGs (Retrieval-Augmented Generation) to enhance AI performance.
+Computer Vision: Working with deep learning models for image processing, object detection, and feature extraction, lightly explored in my hackathon experience with satellite imaging.
+Web Development: Exploring how AI applications can be seamlessly integrated into web platforms, making research-driven solutions accessible at an industrial scale (HTML/CSS/Django/React)
+I am always eager to push the boundaries of AI research, engaging in projects that blend theory with real-world applications in finance, industry, and automation.
+
+
+### Entrepreneurial Mindset and ambitions
+My long-term goal is to apply AI at an industry scale to transform, streamline, and revolutionize business processes. I firmly believe that AI-powered automation, decision-making, and optimization will redefine industries ranging from finance and energy to logistics and manufacturing in the coming years.
+Key areas of interest:
+Bringing AI from research to real-world implementation, ensuring that innovative machine learning solutions are not just theoretical but create tangible value.
+Building AI-driven startups that leverage deep learning, optimization, and automation to tackle inefficiencies in industrial-scale operations.
+Developing scalable AI solutions that integrate with existing business infrastructures to optimize workflows, reduce waste, and enhance productivity.
+
+
+### Culture exsposure and travel
+Having lived, studied, and worked in France, the US, and Singapore, I have gained invaluable exposure to diverse cultures, work ethics, and academic perspectives.
+Multicultural Work Experience:
+At EDF Lab Singapore, I worked in a half-French, half-Chinese research team, gaining firsthand experience in cross-cultural collaboration, communication, and problem-solving.
+I adapted to different working styles, integrating both French mathematical rigor and Singaporean efficiency and innovation-driven research.
+Academic & Professional Exposure:
+Studying at Princeton University has given me insights into American academic and research culture, where interdisciplinary approaches and industry connections are key to advancing technology.
+My foundation in France’s rigorous mathematical training at Ecole Polytechnique has equipped me with strong analytical and theoretical skills that I apply in research-driven AI projects.
+
+
+### Projects and Research - Stochastic modelling in population dynamics
+Developed a stochastic model to solve stationary solutions of the Sheguesada-Kawazaki-Teramoto (SKT) non-linear differential system.
+Explored birth-death processes and local segregation models to describe two-species population dynamics.
+Demonstrated how stochastic effects influence ecological balance and competitive interactions in population systems.
+
+
+### Projects and Research - QuantumBlack Deep Learning hackathon
+Our team developed the best-performing methane gas leak detection and localization model from satellite imaging.
+Designed a CNN-based deep learning pipeline that achieved 92% accuracy in detecting methane leaks, outperforming competing models.
+Explored transfer learning techniques to enhance model performance with limited training data.
 
 
 ### Academic contests

@@ -34,7 +34,7 @@ logger.debug(f"Media folder: {str(Path(__file__).parent.parent / 'ragdb')}")
 def get_streaming_response(message: str, history: List[Dict[str, str]]) -> Generator[str, None, None]:
     try:
         logger.debug(f"Received message: {message}")
-        context = retriever.get_top_chunks(message, k=3)
+        context = retriever.get_top_chunks(message, k=5)
         
         # Check if context is empty or irrelevant
         if not context.strip():
@@ -59,9 +59,9 @@ def get_streaming_response(message: str, history: List[Dict[str, str]]) -> Gener
             "stream": True,
             "options": {
                 "num_ctx": 4096,
-                "temperature": 0.65,    # Reduced further for more focused responses
-                "top_p": 0.7,          # Reduced for more deterministic outputs
-                "max_tokens": 300,     # Reduced to encourage conciseness
+                "temperature": 0.65,   # Reduce for more focused responses
+                "top_p": 0.7,          # Reduce for more deterministic outputs
+                "max_tokens": 300,     # Reduce to encourage conciseness
                 "stop": ["###", "\n\n\n"]
             }
         }
@@ -113,16 +113,18 @@ def get_streaming_response_api(message: str, history: List[Dict[str, str]], api_
             {"role": "system", "content": BASE_SYSTEM_PROMPT}
         ]
         
+        # Format chat history (last 2 exchanges)
+        chat_history = ""
         if history:
             recent_history = history[-2:]  # Get last 2 exchanges
             for entry in recent_history:
-                role = "user" if entry['sender'] == 'user' else "assistant"
-                messages.append({"role": role, "content": entry['text']})
+                chat_history += f"User: {entry['text']}\n" if entry['sender'] == 'user' else f"Assistant: {entry['text']}\n"
+        
         
         # Include context and question
         messages.append({
             "role": "user", 
-            "content": f"Answer the following question: {message}\n\nUsing information you deem directly relevant regarding the question from this context: \n{context}"
+            "content": f"Previous Conversation: {chat_history}\n\nAnswer the following question: {message}\n\nUsing information you deem directly relevant regarding the question from this context: \n{context}"
         })
         
         client = OpenAI(api_key=api_key)
@@ -130,8 +132,8 @@ def get_streaming_response_api(message: str, history: List[Dict[str, str]], api_
         response = client.chat.completions.create(
             model=model,
             messages=messages,
-            temperature=0.8,
-            max_tokens=300,
+            temperature=0.75,
+            max_tokens=350,
             stream=True
         )
         

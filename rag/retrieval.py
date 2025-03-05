@@ -71,7 +71,7 @@ class RagRetriever:
 
 
 
-    def get_top_chunks(self, query: str, k: int = 3) -> str:
+    def get_top_chunks(self, query: str, k: int) -> str:
         query_vector = self.model.encode([query])
         faiss.normalize_L2(query_vector)
 
