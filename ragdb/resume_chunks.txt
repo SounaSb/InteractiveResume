@@ -28,7 +28,7 @@ Program focus: Research oriented, proof based courses and curriculum.
 Relevant courses attended: Statistics, NLP, Machine learning in C++, Introduction to Java, Deep learning theory, Stochastics in finance, Advanced Monte Carlo Theory, Advanced quantum physics, Stochstic simulations for biology, Time series analysis, Optimization and Control
 
 ### Previous Education - Ecole Polytechnique Entrance Context
-At prestigious selective institution CPGE Ginette.
+Prepared entrance exam to Ecole Polytechnique at prestigious selective institution CPGE Ginette.
 Ranked 69 out of 20,000 students on France national Unversity entrance exams in double major Physics and Math, and minor chemistry.
 Tested courses and topics include: Linear Algebra, Real analysis, probabilities, multivariate analysis, derivatives, fluid mechanics, point mechanics, optic therory, 
 electric theory, thermodynamics, electromagnetism, cinectic chemistry, organic chemistry.
