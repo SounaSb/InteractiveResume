@@ -1,5 +1,5 @@
 # Core web framework
-Django>=4.2.5
+Django>=5.1.0
 
 # API libraries
 openai>=1.2.0
