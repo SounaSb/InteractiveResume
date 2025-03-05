@@ -8,10 +8,10 @@ This application implements an interactive AI chatbot that can answer questions 
 </div>
 
 ## Home Interface
-<img width="1702" alt="Screenshot 2025-03-04 at 23 39 42" src="https://github.com/user-attachments/assets/ef9a85d5-f2d0-4f7a-9f4d-81bd1b8382b9" />
+<img width="1702" alt="Screenshot 2025-03-04 at 23 39 42" src="https://github.com/user-attachments/assets/ef9a85d5-f2d0-4f7a-9f4d-81bd1b8382b9" style="border: 2px solid white;" />
 
 ## Chatbot Interface
-<img width="1702" alt="Screenshot 2025-03-04 at 23 39 26" src="https://github.com/user-attachments/assets/ca450986-e6d8-4a25-9ba1-4caa6568aa53" />
+<img width="1702" alt="Screenshot 2025-03-04 at 23 39 26" src="https://github.com/user-attachments/assets/ca450986-e6d8-4a25-9ba1-4caa6568aa53" style="border: 2px solid white;" />
 
 
 
