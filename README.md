@@ -2,8 +2,12 @@
 
 This application implements an interactive AI chatbot that can answer questions about my resume in real-time. Built using a Retrieval-Augmented Generation (RAG) architecture, it provides a virtual interview experience with detailed information about my background, skills, and projects.
 
-<img width="1702" alt="Screenshot 2025-03-04 at 23 39 26" src="https://github.com/user-attachments/assets/ca450986-e6d8-4a25-9ba1-4caa6568aa53" />
+
+## Home Interface
 <img width="1702" alt="Screenshot 2025-03-04 at 23 39 42" src="https://github.com/user-attachments/assets/ef9a85d5-f2d0-4f7a-9f4d-81bd1b8382b9" />
+
+## Chatbot Interface
+<img width="1702" alt="Screenshot 2025-03-04 at 23 39 26" src="https://github.com/user-attachments/assets/ca450986-e6d8-4a25-9ba1-4caa6568aa53" />
 
 
 
