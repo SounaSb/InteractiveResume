@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['13.61.105.202', 'localhost', '127.0.0.1']
 SECRET_KEY = os.getenv("SECRET_KEY")
@@ -137,3 +137,49 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Add these at the end of the file
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
+
+
+# Add this at the end of the file
+
+# Logging configuration
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': '{levelname} {asctime} {module} {message}',
+            'style': '{',
+        },
+    },
+    'handlers': {
+        'console': {
+            'level': 'ERROR' if not DEBUG else 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'formatter': 'verbose',
+        },
+        'file': {
+            'level': 'ERROR',
+            'class': 'logging.FileHandler',
+            'filename': BASE_DIR / 'debug.log',
+            'formatter': 'verbose',
+        },
+    },
+    'loggers': {
+        '': {  # Root logger
+            'handlers': ['console', 'file'],
+            'level': 'ERROR' if not DEBUG else 'DEBUG',
+            'propagate': True,
+        },
+        'django': {
+            'handlers': ['console', 'file'],
+            'level': 'ERROR' if not DEBUG else 'INFO',
+            'propagate': False,
+        },
+        'rag': {
+            'handlers': ['console', 'file'],
+            'level': 'ERROR' if not DEBUG else 'DEBUG',
+            'propagate': False,
+        },
+    },
+}

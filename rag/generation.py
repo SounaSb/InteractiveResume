@@ -9,8 +9,9 @@ from openai import OpenAI
 
 
 
-logging.basicConfig(level=logging.DEBUG)
-logger = logging.getLogger(__name__)
+# logging.basicConfig(level=logging.DEBUG)
+# logger = logging.getLogger(__name__)
+logger = logging.getLogger('rag.generation')
 
 OLLAMA_ENDPOINT = "http://localhost:11434/api/generate"
 
@@ -96,12 +97,23 @@ def get_streaming_response(message: str, history: List[Dict[str, str]]) -> Gener
 
 
 
+model_gpt = "gpt-o3-mini"
+# model_gpt = "gpt-o3-turbo"
 
-
-def get_streaming_response_api(message: str, history: List[Dict[str, str]], api_key: str, model: str = "gpt-3.5-turbo") -> Generator[str, None, None]:
+def get_streaming_response_api(message: str, history: List[Dict[str, str]], api_key: str, model: str = "gpt-o3-mini") -> Generator[str, None, None]:
     try:
         logger.debug(f"Received message for OpenAI API: {message}")
-        context = retriever.get_top_chunks(message, k=3)
+        
+
+        # Check if this is just a greeting first
+        simple_greetings = ["hi", "hello", "hey", "yo", "sup", "what's up", "howdy"]
+        if message.lower().strip() in simple_greetings:
+            logger.debug("Simple greeting detected")
+            yield "Hello! How can I help you learn about Daniel's background today?"
+            return
+        
+        
+        context = retriever.get_top_chunks(message, k=4)
         
         # Check if context is empty or irrelevant
         if not context.strip():
